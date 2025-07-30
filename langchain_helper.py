@@ -1,12 +1,14 @@
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
+langchain_api_key = os.getenv("LANGCHAIN_API_KEY")
+
 from langchain_openai import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-
-# Load environment variables
-load_dotenv()
 
 def generate_pet_name(animal_type, pet_color):
     # Initialize the LLM
